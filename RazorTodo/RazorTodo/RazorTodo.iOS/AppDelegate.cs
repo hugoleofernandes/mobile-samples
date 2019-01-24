@@ -5,6 +5,7 @@ using Foundation;
 using UIKit;
 using RazorTodo;
 using System.IO;
+using SQLite.Net;
 
 namespace RazorTodo
 {
@@ -41,11 +42,14 @@ namespace RazorTodo
 				File.Copy (sqliteFilename, path);
 			}
 
-			var plat = new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS();
-			var conn = new SQLite.Net.SQLiteConnection(plat, path);
+			//var plat = new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS();
+			//var conn = new SQLite.Net.SQLiteConnection(plat, path);
 
-			// Set the database connection string
-			App.SetDatabaseConnection (conn);
+		    var conn = new SQLiteConnection(path);
+
+
+            // Set the database connection string
+            App.SetDatabaseConnection (conn);
 
 			window.RootViewController = new RazorViewController ();
 

@@ -9,6 +9,7 @@ using System.IO;
 using Android.Speech.Tts;
 using Android.Webkit;
 using System.Linq;
+using SQLite;
 
 namespace RazorTodo
 {
@@ -39,11 +40,15 @@ namespace RazorTodo
 				ReadWriteStream(s, writeStream);
 			}
 
-			var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
-			var conn = new SQLite.Net.SQLiteConnection(plat, path);
+		    
 
-			// Set the database connection string
-			App.SetDatabaseConnection (conn);
+   //         var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+			//var conn = new SQLite.Net.SQLiteConnection(plat, path);
+
+		    var conn = new SQLiteConnection(path);
+
+            // Set the database connection string
+            App.SetDatabaseConnection (conn);
 			#endregion
 
 			// Set our view from the "main" layout resource

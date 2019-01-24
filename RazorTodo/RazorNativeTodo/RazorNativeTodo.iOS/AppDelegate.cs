@@ -36,16 +36,16 @@ namespace RazorNativeTodo
 			var path = Path.Combine(libraryPath, sqliteFilename);
 
 			// This is where we copy in the prepopulated database
-			Console.WriteLine (path);
-			if (!File.Exists (path)) {
-				File.Copy (sqliteFilename, path);
-			}
+			//Console.WriteLine (path);
+			//if (!File.Exists (path)) {
+			//	File.Copy (sqliteFilename, path);
+			//}
 
-			var plat = new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS();
-			var conn = new SQLite.Net.SQLiteConnection(plat, path);
+			//var plat = new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS();
+			//var conn = new SQLite.Net.SQLiteConnection(plat, path);
 
 			// Set the database connection string
-			App.SetDatabaseConnection (conn);
+			//App.SetDatabaseConnection (conn);
 
 //			window.RootViewController = new HybridRazorViewController ();
 			window.RootViewController = new UINavigationController(new NativeListViewController ());

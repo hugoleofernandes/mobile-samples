@@ -70,11 +70,11 @@ namespace RazorNativeTodo
 				ReadWriteStream(s, writeStream);
 			}
 
-			var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
-			var conn = new SQLite.Net.SQLiteConnection(plat, path);
+			//var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+			//var conn = new SQLite.Net.SQLiteConnection(plat, path);
 
 			// Set the database connection string
-			App.SetDatabaseConnection (conn);
+			//App.SetDatabaseConnection (conn);
 			#endregion
 		}
 
@@ -82,10 +82,11 @@ namespace RazorNativeTodo
 		{
 			base.OnResume ();
 
-			todoItems = App.Database.GetItems().ToList();
+			//todoItems = App.Database.GetItems().ToList();
+			todoItems = new List<TodoItem>();
 
-			// create our adapter
-			adapter = new TaskListAdapter(this, todoItems);
+            // create our adapter
+            adapter = new TaskListAdapter(this, todoItems);
 
 			//Hook up our adapter to our ListView
 			todoList.Adapter = adapter;

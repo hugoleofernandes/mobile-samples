@@ -1,5 +1,5 @@
 ﻿using System;
-using SQLite.Net.Attributes;
+//using SQLite.Net.Attributes;
 
 namespace RazorNativeTodo
 {
@@ -9,7 +9,7 @@ namespace RazorNativeTodo
 		{
 		}
 
-		[PrimaryKey, AutoIncrement]
+		//[PrimaryKey, AutoIncrement]
 		public int ID { get; set; }
 		public string Name { get; set; }
 		public string Notes { get; set; }
